@@ -2,8 +2,8 @@
 
 /**
  * unknown_error - a script to handle unknown error
- * opcode: opcode argument
- * line_number: number the line
+ * @opcode: opcode argument
+ * @line_number: number the line
  *
  * Return: EXIT_FAILURE
  */
