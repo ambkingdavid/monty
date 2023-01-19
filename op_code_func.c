@@ -1,6 +1,10 @@
 #include "monty.h"
 
-
+/**
+ * monty_push - A script that pushes monty functions
+ * stack: stack argument
+ * line_number: number argument
+ */
 void monty_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new, *temp;

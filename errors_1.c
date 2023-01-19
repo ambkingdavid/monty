@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * unknown_error - a script to handle unknown error
+ * opcode: opcode argument
+ * line_number: number the line
+ *
+ * Return: EXIT_FAILURE
+ */
 int unknown_error(char *opcode, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n",
