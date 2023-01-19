@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * monty_nop - a script containing monty nop function
+ * @stack: argument stack
+ * @line_number: argument number
+ */
 void monty_nop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
