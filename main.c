@@ -6,8 +6,8 @@ char **op_tokens = NULL;
 
 /**
  * main - a monty scripting language
- * ac: argument counter
- * av: argument array
+ * @ac: argument counter
+ * @av: argument array
  *
  * Return: exit_status
  */

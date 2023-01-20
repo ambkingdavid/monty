@@ -43,7 +43,12 @@ int execute_monty(FILE *fp)
 	/* free memory */
 	return (exit_status);
 }
-
+/**
+ * get_tokens - a script that prints monty token
+ * @linestr: Line String argument
+ *
+ * Return: tokens
+ */
 char **get_tokens(char *linestr)
 {
 	char **tokens, *token;
@@ -66,6 +71,12 @@ char **get_tokens(char *linestr)
 	return (tokens);
 }
 
+/**
+ * init_list - a script that initialize init list
+ * @stack: argument stack
+ *
+ * Return: exit_success
+ */
 int init_list(stack_t **stack)
 {
 	stack_t *s;
@@ -83,6 +94,13 @@ int init_list(stack_t **stack)
 	return (EXIT_SUCCESS);
 }
 
+/**
+ * check_mode - a script that checks mode
+ * @stack: argument stack
+ *
+ * Return: 2
+ */
+
 int check_mode(stack_t **stack)
 {
 	if ((*stack)->n == STACK)
@@ -92,6 +110,12 @@ int check_mode(stack_t **stack)
 	return (2);
 }
 
+/**
+ * get_op - a script that prints opcode
+ * @opcode: opcode argument
+ *
+ * Return: NULL
+ */
 void (*get_op(char *opcode))(stack_t**, unsigned int)
 {
 	int i;
