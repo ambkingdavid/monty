@@ -37,7 +37,10 @@ void execute_monty(FILE *fp)
 	free(var.opcode);
 	free(var.arg);
 }
-
+/**
+ * get_tokens - A function that gets monty token
+ * @linestr: String Argument
+ */
 void get_tokens(char *linestr)
 {
 	char *token;
@@ -47,7 +50,10 @@ void get_tokens(char *linestr)
 	token = strtok(NULL, " \n\t\b\a");
 	var.arg = token;
 }
-
+/**
+ * init_list - A function that gets monty token
+ * @stack: Stack Argument
+ */
 void init_list(stack_t **stack)
 {
 	stack_t *s;
@@ -60,7 +66,12 @@ void init_list(stack_t **stack)
 
 	*stack = s;
 }
-
+/**
+ * check_mode - A function that checks monty monty
+ * @stack: Stack Argument
+ *
+ * Return: 2
+ */
 int check_mode(stack_t **stack)
 {
 	if ((*stack)->n == STACK)
@@ -69,7 +80,12 @@ int check_mode(stack_t **stack)
 		return (QUEUE);
 	return (2);
 }
-
+/**
+ * get_op - A function that gets monty op
+ * @opcode: opcode Argument
+ *
+ * Return: Null
+ */
 void (*get_op(char *opcode))(stack_t**, unsigned int)
 {
 	int i;
