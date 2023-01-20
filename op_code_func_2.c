@@ -13,7 +13,6 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 	if ((*stack)->next == NULL)
 	{
 		pop_error(line_number);
-		return;
 	}
 
 	node1 = (*stack)->next;

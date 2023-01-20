@@ -7,20 +7,16 @@ void monty_push(stack_t **stack, unsigned int line_number)
 
 	temp = (*stack)->next;
 	new = malloc(sizeof(stack_t));
-
+// handle malloc error
 	if (new == NULL)
-	{
 		malloc_error();
-		return;
-	}
-	if (op_tokens[1] == NULL ||
-			(atoi(op_tokens[1]) == 0 && op_tokens[1][0] != '0'))
-	{
+//handle no argument error
+	if (var.arg == NULL)
 		push_error(line_number);
-		return;
-	}
-
-	new->n = atoi(op_tokens[1]);
+// handle not integer arg error
+	if (check_arg(var.arg) != 1)
+		push_error(line_number);
+	new->n = atoi(var.arg);
 	if (check_mode(stack) == STACK)
 	{
 		new->next = temp;
@@ -60,7 +56,6 @@ void monty_add(stack_t **stack, unsigned int line_number)
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		add_error(line_number);
-		return;
 	}
 
 	node1 = (*stack)->next;
@@ -68,7 +63,6 @@ void monty_add(stack_t **stack, unsigned int line_number)
 	node2->n += node1->n;
 	(*stack)->next = node2;
 	free(node1);
-	(void) line_number;
 }
 
 void monty_pint(stack_t **stack, unsigned int line_number)
@@ -78,12 +72,10 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 	if ((*stack)->next == NULL)
 	{
 		pint_error(line_number);
-		return;
 	}
 
 	node1 = (*stack)->next;
 	printf("%d\n", node1->n);
-	(void) line_number;
 }
 
 void monty_swap(stack_t **stack, unsigned int line_number)
@@ -93,19 +85,15 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		swap_error(line_number);
-		return;
 	}
-	else
-	{
-		node1 = (*stack)->next;
-		node2 = node1->next;
-		node3 = node2->next;
+	node1 = (*stack)->next;
+	node2 = node1->next;
+	node3 = node2->next;
 
-		(*stack)->next = node2;
-		node2->next = node1;
-		node1->next = node3;
-		node2->prev = *stack;
-		node1->prev = node2;
-		node3->prev = node1;
-	}
+	(*stack)->next = node2;
+	node2->next = node1;
+	node1->next = node3;
+	node2->prev = *stack;
+	node1->prev = node2;
+	node3->prev = node1;
 }

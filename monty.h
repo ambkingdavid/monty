@@ -5,11 +5,13 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <ctype.h>
 
 #define STACK 1
 #define QUEUE 0
 
-extern char **op_tokens;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -42,12 +44,27 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * global_v - a structure that holds some global variables
+ * @opcode: the operation code
+ * @arg: the operation argument
+ *
+ * Description: some global variables for use across sorce files
+ */
 
-int execute_monty(FILE *fp);
-int init_list(stack_t **stack);
+typedef struct global_v
+{
+	char *opcode;
+	char *arg;
+}variables;
+extern variables var;
+
+
+void execute_monty(FILE *fp);
+void init_list(stack_t **stack);
 int check_mode(stack_t **stack);
 void (*get_op(char *opcode))(stack_t**, unsigned int);
-char **get_tokens(char *linestr);
+void get_tokens(char *linestr);
 
 /*op_code_functions */
 void monty_push(stack_t **stack, unsigned int line_number);
@@ -60,16 +77,17 @@ void monty_pop(stack_t **stack, unsigned int line_number);
 
 /* errors */
 
-int unknown_error(char *opcode, unsigned int line_number);
-int malloc_error(void);
-int push_error(unsigned int line_number);
-int pint_error(unsigned int line_number);
-int pop_error(unsigned int line_number);
-int swap_error(unsigned int line_number);
-int add_error(unsigned int line_number);
+void unknown_error(char *opcode, unsigned int line_number);
+void malloc_error(void);
+void push_error(unsigned int line_number);
+void pint_error(unsigned int line_number);
+void pop_error(unsigned int line_number);
+void swap_error(unsigned int line_number);
+void add_error(unsigned int line_number);
 
 
 /* utilities */
-unsigned int get_op_token_len(void);
+int check_arg(char *arg);
+
 
 #endif /* MONTY_H */

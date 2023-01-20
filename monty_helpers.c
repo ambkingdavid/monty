@@ -3,84 +3,60 @@
  * execute_monty - it execute a monty file
  * @fp: monty file
  *
- * Return: exit_status
  */
-int execute_monty(FILE *fp)
+void execute_monty(FILE *fp)
 {
 	char *line;
 	stack_t *stack;
-	size_t n, exit_status;
-	unsigned int line_number, optoken_len;
+	size_t n;
+	unsigned int line_number;
 	void (*opcode_func)(stack_t**, unsigned int);
 
-	exit_status = EXIT_SUCCESS;
-
-	if (init_list(&stack) == EXIT_FAILURE)
-	{
-		exit_status = malloc_error();
-	}
+	init_list(&stack);
+	if (stack == NULL)
+		malloc_error();
 
 	line_number = 0;
 	while (getline(&line, &n, fp) != -1)
 	{
 		line_number++;
-		op_tokens = get_tokens(line);
-		if (op_tokens == NULL)
-			exit_status = malloc_error();
-
-		opcode_func = get_op(op_tokens[0]);
+		get_tokens(line);
+		opcode_func = get_op(var.opcode);
 		if (opcode_func == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n",
-					line_number, op_tokens[0]);
+					line_number, var.opcode);
 			/* free memory */
-			return (EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		}
-/*		optoken_len = get_op_token_len();*/
 		opcode_func(&stack, line_number);
-
 	}
 	/* free memory */
-	return (exit_status);
+	free(var.opcode);
+	free(var.arg);
 }
 
-char **get_tokens(char *linestr)
+void get_tokens(char *linestr)
 {
-	char **tokens, *token;
-	int i;
-
-	tokens = malloc(sizeof(char *) * strlen(linestr));
-	if (tokens == NULL)
-		return (NULL);
+	char *token;
 
 	token = strtok(linestr, " \n\t\b\a");
-	i = 0;
-	while (token != NULL)
-	{
-		tokens[i] = token;
-		token = strtok(NULL, " \n\t\b\a");
-		i++;
-	}
-	tokens[i] = NULL;
-
-	return (tokens);
+	var.opcode = token;
+	token = strtok(NULL, " \n\t\b\a");
+	var.arg = token;
 }
 
-int init_list(stack_t **stack)
+void init_list(stack_t **stack)
 {
 	stack_t *s;
 
 	s = malloc(sizeof(stack_t));
-	if (!s)
-		return (EXIT_FAILURE);
 
 	s->n = STACK;
 	s->prev = NULL;
 	s->next = NULL;
 
 	*stack = s;
-
-	return (EXIT_SUCCESS);
 }
 
 int check_mode(stack_t **stack)

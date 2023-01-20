@@ -1,13 +1,17 @@
 #include "monty.h"
 
-unsigned int get_op_token_len(void)
+int check_arg(char *arg)
 {
-	unsigned int len;
+	int i;
 
-	len = 0;
-	while (*op_tokens[len])
+	for (i = 0; arg[i]; i++)
 	{
-		len++;
+		if (arg[i] == '-' && i == 0)
+			continue;
+		if (arg[i] < '0' || arg[i] > '9')
+		{
+			return (0);
+		}
 	}
-	return (len);
+	return (1);
 }
