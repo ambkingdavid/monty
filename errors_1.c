@@ -18,13 +18,19 @@ void malloc_error(void)
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
-
+/**
+ * push_error - A function that prints push error
+ * @line_number: Number Argument
+ */
 void push_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 	exit(EXIT_FAILURE);
 }
-
+/**
+ * pint_error - A function that prints pint error
+ * @line_number: Number Argument
+ */
 void pint_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
