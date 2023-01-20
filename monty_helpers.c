@@ -51,7 +51,7 @@ void get_tokens(char *linestr)
 	var.arg = token;
 }
 /**
- * init_list - A function that gets monty token
+ * init_list - A function that gets token in monty file
  * @stack: Stack Argument
  */
 void init_list(stack_t **stack)
