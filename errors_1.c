@@ -10,7 +10,9 @@ void unknown_error(char *opcode, unsigned int line_number)
 			line_number, opcode);
 	exit(EXIT_FAILURE);
 }
-
+/**
+ * malloc_error - A function that prints malloc error
+ */
 void malloc_error(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
