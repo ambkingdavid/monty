@@ -60,6 +60,8 @@ typedef struct global_v
 extern variables var;
 
 
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+
 void execute_monty(FILE *fp);
 void init_list(stack_t **stack);
 int check_mode(stack_t **stack);

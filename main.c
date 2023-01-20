@@ -12,12 +12,12 @@ variables var = {NULL, NULL};
  */
 int main(int ac, char *av[])
 {
+	FILE *fp;
 	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
-	FILE *fp;
 
 	fp = fopen(av[1], "r");
 	if (fp == NULL)

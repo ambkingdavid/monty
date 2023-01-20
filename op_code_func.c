@@ -7,13 +7,10 @@ void monty_push(stack_t **stack, unsigned int line_number)
 
 	temp = (*stack)->next;
 	new = malloc(sizeof(stack_t));
-// handle malloc error
 	if (new == NULL)
 		malloc_error();
-//handle no argument error
 	if (var.arg == NULL)
 		push_error(line_number);
-// handle not integer arg error
 	if (check_arg(var.arg) != 1)
 		push_error(line_number);
 	new->n = atoi(var.arg);

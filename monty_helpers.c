@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 /**
  * execute_monty - it execute a monty file
  * @fp: monty file
@@ -6,9 +7,10 @@
  */
 void execute_monty(FILE *fp)
 {
-	char *line;
+	char *line = NULL;
 	stack_t *stack;
-	size_t n;
+	size_t n = 0;
+	ssize_t read;
 	unsigned int line_number;
 	void (*opcode_func)(stack_t**, unsigned int);
 
@@ -17,7 +19,7 @@ void execute_monty(FILE *fp)
 		malloc_error();
 
 	line_number = 0;
-	while (getline(&line, &n, fp) != -1)
+	while ((read = getline(&line, &n, fp)) != -1)
 	{
 		line_number++;
 		get_tokens(line);
