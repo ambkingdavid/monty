@@ -4,9 +4,9 @@
 variables var = {NULL, NULL};
 
 /**
- * main - a monty scripting language
- * @ac: argument counter
- * @av: argument array
+ * main - A monty scripting language
+ * @ac: Argument counter
+ * @av: Argument array
  *
  * Return: exit_status
  */
