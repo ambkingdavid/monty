@@ -1,7 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 /**
- * execute_monty - it execute a monty file
+ * execute_monty - it execute a monty file and function
  * @fp: monty file
  *
  */
