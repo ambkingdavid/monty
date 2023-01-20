@@ -43,6 +43,11 @@ void monty_push(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * monty_pall - A script that prints all monty functions
+ * @stack: stack argument
+ * @line_number: number argument
+ */
 void monty_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
@@ -57,6 +62,11 @@ void monty_pall(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 }
 
+/**
+ * monty_add - A script that adds monty functions
+ * @stack: stack argument
+ * @line_number: number argument
+ */
 void monty_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2;
@@ -75,6 +85,11 @@ void monty_add(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 }
 
+/**
+ * monty_pint - A script that prints monty top
+ * @stack: stack argument
+ * @line_number: number argument
+ */
 void monty_pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1;
@@ -90,6 +105,11 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 }
 
+/**
+ * monty_swap - A script that prints monty swap function
+ * @stack: stack argument
+ * @line_number: number argument
+ */
 void monty_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2, *node3;
