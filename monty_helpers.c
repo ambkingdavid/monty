@@ -81,7 +81,7 @@ int check_mode(stack_t **stack)
 	return (2);
 }
 /**
- * get_op - A function that gets monty op
+ * get_op - A function that gets monty op code from monty file
  * @opcode: opcode Argument
  *
  * Return: Null
