@@ -10,6 +10,11 @@ void monty_nop(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 }
 
+/**
+ * monty_pop - A script that prints monty pop funtion
+ * @stack: stack argument
+ * @line_number: number argument
+ */
 void monty_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2;
