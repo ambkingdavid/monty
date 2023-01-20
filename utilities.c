@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * check_arg - a script that checks monty argument
+ * @arg: argument checker
+ *
+ * Return: 1
+ */
 int check_arg(char *arg)
 {
 	int i;
