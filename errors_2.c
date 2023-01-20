@@ -9,7 +9,7 @@ void swap_error(unsigned int line_number)
 	exit(EXIT_FAILURE);
 }
 /**
- * add_error - A function that prints add error
+ * add_error - A function that prints add error in monty
  * @line_number: Number Argument
  */
 void add_error(unsigned int line_number)
