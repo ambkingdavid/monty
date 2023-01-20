@@ -38,7 +38,7 @@ void execute_monty(FILE *fp)
 	free(var.arg);
 }
 /**
- * get_tokens - A function that gets monty token
+ * get_tokens - A function that gets monty tokens from monty files
  * @linestr: String Argument
  */
 void get_tokens(char *linestr)
