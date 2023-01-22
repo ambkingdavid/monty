@@ -105,6 +105,8 @@ void (*get_op(char *opcode))(stack_t**, unsigned int)
 		{"pstr", monty_pstr},
 		{"rotl", monty_rotl},
 		{"rotr", monty_rotr},
+		{"queue", monty_mode},
+		{"stack", monty_mode},
 		{NULL, NULL}
 	};
 
