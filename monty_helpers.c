@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 /**
  * execute_monty - it execute a monty file and function
  * @fp: monty file
@@ -8,15 +7,11 @@
 void execute_monty(FILE *fp)
 {
 	char *line = NULL;
-	stack_t *stack;
+	stack_t *list = NULL;
 	size_t n = 0;
 	ssize_t read;
 	unsigned int line_number;
 	void (*opcode_func)(stack_t**, unsigned int);
-
-	init_list(&stack);
-	if (stack == NULL)
-		malloc_error();
 
 	line_number = 0;
 	while ((read = getline(&line, &n, fp)) != -1)
@@ -28,14 +23,14 @@ void execute_monty(FILE *fp)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n",
 					line_number, var.opcode);
-			/* free memory */
+
+			free_list(&list);
 			exit(EXIT_FAILURE);
 		}
-		opcode_func(&stack, line_number);
+		opcode_func(&list, line_number);
 	}
-	/* free memory */
-	free(var.opcode);
-	free(var.arg);
+	free(line);
+	free_list(&list);
 }
 /**
  * get_tokens - A function that gets monty tokens from monty files

@@ -20,16 +20,16 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2;
 
-	if ((*stack)->next == NULL)
+	if ((*stack) == NULL)
 	{
-		pop_error(line_number);
+		pop_error(stack, line_number);
 	}
 
-	node1 = (*stack)->next;
+	node1 = (*stack);
 	node2 = node1->next;
 
-	(*stack)->next = node2;
-	node2->prev = *stack;
+	(*stack) = node2;
+	node2->prev = NULL;
 
 	free(node1);
 }

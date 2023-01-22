@@ -80,12 +80,13 @@ void monty_pop(stack_t **stack, unsigned int line_number);
 
 /* errors */
 
-void malloc_error(stack_t **list);
-void push_error(stack_t **list, unsigned int line_number);
-void pint_error(stack_t **list, unsigned int line_number);
-void pop_error(stack_t **list, unsigned int line_number);
-void swap_error(stack_t **list, unsigned int line_number);
-void add_error(stack_t **list, unsigned int line_number);
+void unknown_error(char *opcode, unsigned int line_number);
+void malloc_error(void);
+void push_error(unsigned int line_number);
+void pint_error(unsigned int line_number);
+void pop_error(unsigned int line_number);
+void swap_error(unsigned int line_number);
+void add_error(unsigned int line_number);
 
 
 /* utilities */
@@ -94,7 +95,7 @@ void add_node_queue(stack_t **head, int n);
 void add_node_stack(stack_t **head, int n);
 
 /* free memory */
-void free_list(stack_t **list);
+void free_memory(void);
 
 
 
