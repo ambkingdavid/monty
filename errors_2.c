@@ -31,3 +31,18 @@ void sub_error(stack_t **list, unsigned int line_number)
 	free_list(list);
 	exit(EXIT_FAILURE);
 }
+
+
+void div_error(stack_t **list, unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+	free_list(list);
+	exit(EXIT_FAILURE);
+}
+
+void mul_error(stack_t **list, unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+	free_list(list);
+	exit(EXIT_FAILURE);
+}
