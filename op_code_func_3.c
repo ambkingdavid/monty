@@ -83,3 +83,22 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
 	(*stack) = temp;
 	(void)line_number;
 }
+
+void monty_rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+
+	temp = *stack;
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = *stack;
+	temp->prev->next = NULL;
+	temp->prev = NULL;
+	(*stack)->prev = temp;
+	(*stack) = temp;
+	(void)line_number;
+}
