@@ -28,8 +28,16 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 	node1 = (*stack);
 	node2 = node1->next;
 
-	(*stack) = node2;
-	node2->prev = NULL;
+	if (node2 == NULL)
+	{
+		*stack = NULL;
+		free(node1);
+	}
+	else
+	{
+		(*stack) = node2;
+		node2->prev = NULL;
+		free(node1);
+	}
 
-	free(node1);
 }

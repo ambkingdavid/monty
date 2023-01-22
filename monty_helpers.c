@@ -20,6 +20,8 @@ void execute_monty(FILE *fp)
 		if (read == 1)
 			continue;
 		get_tokens(line);
+		if (var.opcode == NULL)
+			continue;
 		opcode_func = get_op(var.opcode);
 		if (opcode_func == NULL)
 		{
