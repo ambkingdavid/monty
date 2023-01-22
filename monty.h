@@ -82,6 +82,7 @@ void monty_sub(stack_t **stack, unsigned int line_number);
 void monty_div(stack_t **stack, unsigned int line_number);
 void monty_mul(stack_t **stack, unsigned int line_number);
 void monty_mod(stack_t **stack, unsigned int line_number);
+void monty_pchar(stack_t **stack, unsigned int line_number);
 
 
 
@@ -97,6 +98,8 @@ void sub_error(stack_t **list, unsigned int line_number);
 void div_error(stack_t **list, unsigned int line_number);
 void mul_error(stack_t **list, unsigned int line_number);
 void mod_error(stack_t **list, unsigned int line_number);
+void pchar_error(stack_t **list, unsigned int line_number);
+
 
 
 /* utilities */
