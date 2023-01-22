@@ -35,10 +35,10 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 	node1 = (*stack);
 	if (node1->n > 127 || node1->n < 0)
 	{
-		fprintf(stderr, "L%d: can't pchar, value out of range", line_number);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		free_list(stack);
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%d\n", node1->n);
+	printf("%c\n", node1->n);
 }
