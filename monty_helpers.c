@@ -103,6 +103,7 @@ void (*get_op(char *opcode))(stack_t**, unsigned int)
 		{"mod", monty_mod},
 		{"pchar", monty_pchar},
 		{"pstr", monty_pstr},
+		{"rotl", monty_rotl},
 		{NULL, NULL}
 	};
 

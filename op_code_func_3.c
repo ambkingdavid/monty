@@ -62,3 +62,24 @@ void monty_pstr(stack_t **stack, unsigned int line_number)
 	printf("\n");
 	(void)line_number;
 }
+
+void monty_rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp, *top;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+
+	top = (*stack)->next;
+	top->prev = NULL;
+
+	temp = *stack;
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = *stack;
+	(*stack)->next = NULL;
+	(*stack)->prev = temp;
+	(*stack) = temp;
+	(void)line_number;
+}
