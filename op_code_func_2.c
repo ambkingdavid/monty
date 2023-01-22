@@ -67,11 +67,6 @@ void monty_div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2;
 
-	if ((*stack) == NULL || (*stack)->next == NULL)
-	{
-		div_error(stack, line_number);
-	}
-
 	node1 = (*stack);
 	if (node1->n == 0)
 	{
@@ -79,6 +74,11 @@ void monty_div(stack_t **stack, unsigned int line_number)
 		free_list(stack);
 		exit(EXIT_FAILURE);
 	}
+	if ((*stack) == NULL || (*stack)->next == NULL)
+	{
+		div_error(stack, line_number);
+	}
+
 	node2 = node1->next;
 	node2->n /= node1->n;
 	(*stack) = node2;
