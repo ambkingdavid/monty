@@ -52,6 +52,11 @@ void add_node_stack(stack_t **head, int n)
 	}
 }
 
+/**
+ * add_node_queue - A function to add node to queue
+ * @head: Head counter
+ * @n: Integer Argument
+ */
 void add_node_queue(stack_t **head, int n)
 {
 	stack_t *tmp, *new;
