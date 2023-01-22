@@ -22,6 +22,8 @@ void execute_monty(FILE *fp)
 		get_tokens(line);
 		if (var.opcode == NULL)
 			continue;
+		if (var.opcode[0] == '#')
+			continue;
 		opcode_func = get_op(var.opcode);
 		if (opcode_func == NULL)
 		{
