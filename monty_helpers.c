@@ -100,6 +100,7 @@ void (*get_op(char *opcode))(stack_t**, unsigned int)
 		{"sub", monty_sub},
 		{"div", monty_div},
 		{"mul", monty_mul},
+		{"mod", monty_mod},
 		{NULL, NULL}
 	};
 

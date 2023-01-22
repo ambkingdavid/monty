@@ -68,15 +68,15 @@ void monty_div(stack_t **stack, unsigned int line_number)
 	stack_t *node1, *node2;
 
 	node1 = (*stack);
+	if ((*stack) == NULL || (*stack)->next == NULL)
+	{
+		div_error(stack, line_number);
+	}
 	if (node1->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_list(stack);
 		exit(EXIT_FAILURE);
-	}
-	if ((*stack) == NULL || (*stack)->next == NULL)
-	{
-		div_error(stack, line_number);
 	}
 
 	node2 = node1->next;
