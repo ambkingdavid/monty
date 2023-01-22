@@ -1,6 +1,7 @@
 #include "monty.h"
 /**
  * malloc_error - A function that prints malloc error
+ * @list: List Argument
  */
 void malloc_error(stack_t **list)
 {
@@ -11,6 +12,7 @@ void malloc_error(stack_t **list)
 /**
  * push_error - A function that prints push error
  * @line_number: Number Argument
+ * * @list: List Argument
  */
 void push_error(stack_t **list, unsigned int line_number)
 {
@@ -21,6 +23,7 @@ void push_error(stack_t **list, unsigned int line_number)
 /**
  * pint_error - A function that prints pint error
  * @line_number: Number Argument
+ * @list: List Argument
  */
 void pint_error(stack_t **list, unsigned int line_number)
 {
@@ -31,6 +34,7 @@ void pint_error(stack_t **list, unsigned int line_number)
 /**
  * pop_error - A function that prints pop error
  * @line_number: Number Argument
+ * @list: List Argument
  */
 void pop_error(stack_t **list, unsigned int line_number)
 {

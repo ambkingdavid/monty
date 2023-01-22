@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * monty_mod - A function that prints monty  mod
+ * @stack: List Argument
+ * @line_number: Number Argument
+ */
 void monty_mod(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2;
@@ -22,8 +26,13 @@ void monty_mod(stack_t **stack, unsigned int line_number)
 	free(node1);
 }
 
-
-
+/**
+ * monty_pchar - A function that prints character in monty
+ * @stack: List Argument
+ * @line_number: Number Argument
+ *
+ * Return: EXIT_FAILURE
+ */
 void monty_pchar(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1;
@@ -42,7 +51,13 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", node1->n);
 }
-
+/**
+ * monty_pstr - A function for monty pstr
+ * @stack: List Argument
+ * @line_number: Number Argument
+ *
+ * Return: EXIT_FAILURE
+ */
 void monty_pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
@@ -63,6 +78,11 @@ void monty_pstr(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 }
 
+/**
+ * monty_rotl - A function for stack rotl
+ * @stack: List Argument
+ * @line_number: Number Argument
+ */
 void monty_rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *top;
@@ -84,6 +104,12 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 }
 
+/**
+ * monty_rotr - A function for stack rotation_right
+ * @stack: List Argument
+ * @line_number: Number Argument
+ *
+ */
 void monty_rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;

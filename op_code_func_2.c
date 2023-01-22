@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * monty_nop - A script for nop
+ * monty_nop - A function for monty nop
  * @stack: Stack Argument
  * @line_number: Number Argument
  */
@@ -12,7 +12,7 @@ void monty_nop(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 }
 /**
- * monty_pop - A script that inserts stack in monty function
+ * monty_pop - A function that inserts stack in monty
  * @stack: Stack Argument
  * @line_number: Number Argument
  */
@@ -43,7 +43,7 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_add - A script that prints monty add
+ * monty_sub- A function that prints monty add
  * @stack: Stack Argument
  * @line_number: Number Argument
  */
@@ -62,7 +62,11 @@ void monty_sub(stack_t **stack, unsigned int line_number)
 	(*stack) = node2;
 	free(node1);
 }
-
+/**
+ * monty_div - A function monty division
+ * @stack: Stack Argument
+ * @line_number: Number Argument
+ */
 void monty_div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2;
@@ -84,7 +88,11 @@ void monty_div(stack_t **stack, unsigned int line_number)
 	(*stack) = node2;
 	free(node1);
 }
-
+/**
+ * monty_mul - A function for stack monty multiplication
+ * @stack: Stack Argument
+ * @line_number: Number Argument
+ */
 void monty_mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node1, *node2;
