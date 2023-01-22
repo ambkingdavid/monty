@@ -20,3 +20,14 @@ void add_error(stack_t **list, unsigned int line_number)
 	free_list(list);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * sub_error - A function that prints add error in monty
+ * @line_number: Number Argument
+ */
+void sub_error(stack_t **list, unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+	free_list(list);
+	exit(EXIT_FAILURE);
+}

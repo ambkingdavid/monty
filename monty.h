@@ -77,6 +77,9 @@ void monty_pint(stack_t **stack, unsigned int line_number);
 void monty_swap(stack_t **stack, unsigned int line_number);
 void monty_nop(stack_t **stack, unsigned int line_number);
 void monty_pop(stack_t **stack, unsigned int line_number);
+void monty_add(stack_t **stack, unsigned int line_number);
+void monty_sub(stack_t **stack, unsigned int line_number);
+
 
 /* errors */
 
@@ -86,6 +89,8 @@ void pint_error(stack_t **list, unsigned int line_number);
 void pop_error(stack_t **list, unsigned int line_number);
 void swap_error(stack_t **list, unsigned int line_number);
 void add_error(stack_t **list, unsigned int line_number);
+void sub_error(stack_t **list, unsigned int line_number);
+
 
 
 /* utilities */

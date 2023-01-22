@@ -97,6 +97,7 @@ void (*get_op(char *opcode))(stack_t**, unsigned int)
 		{"swap", monty_swap},
 		{"pop", monty_pop},
 		{"nop", monty_nop},
+		{"sub", monty_sub},
 		{NULL, NULL}
 	};
 
