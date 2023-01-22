@@ -17,6 +17,8 @@ void execute_monty(FILE *fp)
 	while ((read = getline(&line, &n, fp)) != -1)
 	{
 		line_number++;
+		if (read == 1)
+			continue;
 		get_tokens(line);
 		opcode_func = get_op(var.opcode);
 		if (opcode_func == NULL)
