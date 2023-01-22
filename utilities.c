@@ -22,6 +22,11 @@ int check_arg(char *arg)
 	return (1);
 }
 
+/**
+ * add_node_stack - A function that add node stack
+ * @head: Head Counter
+ * @n: Integer argurment
+ */
 void add_node_stack(stack_t **head, int n)
 {
 	stack_t *tmp, *new;
