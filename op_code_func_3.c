@@ -42,3 +42,23 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", node1->n);
 }
+
+void monty_pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	temp = *stack;
+
+	while (temp)
+	{
+		if (!(temp->n > 127 || temp->n < 0))
+		{
+			printf("%c", temp->n);
+			temp = temp->next;
+		}
+		else
+			break;
+	}
+	printf("\n");
+	(void)line_number;
+}
