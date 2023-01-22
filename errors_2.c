@@ -1,6 +1,7 @@
 #include "monty.h"
 /**
  * swap_error - A function that prints swap error
+ * @list: List Argument
  * @line_number: Number Argument
  */
 void swap_error(stack_t **list, unsigned int line_number)
