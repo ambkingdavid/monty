@@ -27,7 +27,7 @@ void add_error(stack_t **list, unsigned int line_number)
  */
 void sub_error(stack_t **list, unsigned int line_number)
 {
-	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 	free_list(list);
 	exit(EXIT_FAILURE);
 }
