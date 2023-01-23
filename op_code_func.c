@@ -22,7 +22,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 	{
 		add_node_stack(stack, n);
 	}
-	else
+	else if (var.mode == QUEUE)
 	{
 		add_node_queue(stack, n);
 	}

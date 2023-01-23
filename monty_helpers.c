@@ -75,9 +75,10 @@ void init_list(stack_t **stack)
  */
 int check_mode(stack_t **stack)
 {
-	if ((*stack)->n == STACK)
+	(void)stack;
+	if (var.mode == STACK)
 		return (STACK);
-	else if ((*stack)->n == QUEUE)
+	else if (var.mode == QUEUE)
 		return (QUEUE);
 	return (2);
 }

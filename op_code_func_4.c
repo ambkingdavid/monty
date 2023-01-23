@@ -10,6 +10,7 @@ void monty_mode(stack_t **stack, unsigned int line_number)
 		var.mode = QUEUE;
 	if (strcmp(var.opcode, "stack") == 0)
 		var.mode = STACK;
+
 	(void)stack;
 	(void)line_number;
 }
