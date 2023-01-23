@@ -110,4 +110,5 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 	node2->next = node1;
 	node1->prev = node2;
 	node1->next = node3;
+	(*stack) = node2;
 }
