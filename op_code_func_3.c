@@ -94,12 +94,14 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
 
 	temp = *stack;
 	while (temp->next != NULL)
+	{
 		temp = temp->next;
+	}
 
 	temp->next = *stack;
 	(*stack)->next = NULL;
 	(*stack)->prev = temp;
-	(*stack) = temp;
+	(*stack) = top;
 	(void)line_number;
 }
 
