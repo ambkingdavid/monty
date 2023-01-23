@@ -111,21 +111,24 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
  * @line_number: Number Argument
  *
  */
+
 void monty_rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *top, *bottom;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 		return;
 
-	temp = *stack;
-	while (temp->next != NULL)
-		temp = temp->next;
+	top = (*stack)->next;
+	bottom = (*stack)->next;
+	while (bottom->next != NULL)
+		bottom = bottom->next;
 
-	temp->next = *stack;
-	temp->prev->next = NULL;
-	temp->prev = NULL;
-	(*stack)->prev = temp;
-	(*stack) = temp;
+	bottom->prev->next = NULL;
+	(*stack)->next = bottom;
+	bottom->prev = *stack;
+	bottom->next = top;
+	top->prev = bottom;
+
 	(void)line_number;
 }
